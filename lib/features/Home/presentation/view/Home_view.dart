@@ -120,11 +120,11 @@ class _HomeviewState extends State<Homeview> {
               const Gap(10),
               const Expanded(
                   child: TabBarView(children: [
-                //to build the cliprat the titel and image the news
-                NewsLIstBullder(category: 'Science'),
-                NewsLIstBullder(category: 'Entertainment'),
-                NewsLIstBullder(category: 'Sports'),
-                NewsLIstBullder(category: 'Business'),
+                //to build the cliprat the titel and image the news by category
+                NewsListBuilder(category: 'Science'),
+                NewsListBuilder(category: 'Entertainment'),
+                NewsListBuilder(category: 'Sports'),
+                NewsListBuilder(category: 'Business'),
               ])),
             ],
           ),

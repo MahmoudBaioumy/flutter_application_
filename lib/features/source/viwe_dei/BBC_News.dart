@@ -4,10 +4,11 @@ import 'package:flutter_application_/core/utils/text_styles.dart';
 import 'package:flutter_application_/core/widget/News_list_builder.dart';
 import 'package:gap/gap.dart';
 
-class BBC_News extends StatelessWidget {
-  const BBC_News({
+class BBC_View extends StatelessWidget {
+  const BBC_View({
     super.key,
   });
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +31,7 @@ class BBC_News extends StatelessWidget {
           const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Gap(15),
         Expanded(
-          child: NewsLIstBullder(category: 'entertainment'),
+          child: NewsListBuilder(category: 'Business'),
         )
       ]),
     );

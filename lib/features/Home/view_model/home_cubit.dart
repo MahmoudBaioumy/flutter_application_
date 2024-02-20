@@ -2,10 +2,11 @@ import 'package:flutter_application_/core/services/api_services.dart';
 import 'package:flutter_application_/features/Home/view_model/home_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+
 class NewsCubit extends Cubit<NewsStastes> {
   NewsCubit() : super(NewsInitState());
 
-//getByCategory
+  // getByCategory
   getByCategory(String category) {
     emit(NewsByCategoryLoadingState());
 
@@ -18,29 +19,28 @@ class NewsCubit extends Cubit<NewsStastes> {
     }
   }
 
-//getBysearch
-  getBysearch(String searchkey) {
+  // getBysearch
+  getBySearch(String searchKey) {
     emit(NewsBySearchLoadingState());
 
     try {
-      ApiServices.getNewsByCategory(searchkey).then((value) {
+      ApiServices.getNewsBySearch(searchKey).then((value) {
         emit(NewsBySearchSuccessState(model: value!));
       });
     } catch (e) {
       emit(NewsBySearchErrorState(error: e.toString()));
     }
-  } 
-  getScourceskey(String Sources) {
-    emit(NewsByScourceLoadingState());
+  }
+     //getByScoure
+   getNewsBySource(String ScoureKey) {
+    emit(NewsBySearchLoadingState());
 
     try {
-      ApiServices.getNewsBySource(Sources).then((value) {
-        emit(NewsByScourceSuccessState(model: value!));
+      ApiServices.getNewsBySource(ScoureKey).then((value) {
+        emit(NewsBySearchSuccessState(model: value!));
       });
     } catch (e) {
-      emit(NewsByScourceErrorState(error: e.toString()));
+      emit(NewsBySearchErrorState(error: e.toString()));
     }
   }
-
-  void getNewsBySource(String secource) {}
 }

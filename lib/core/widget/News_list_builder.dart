@@ -9,8 +9,9 @@ import 'package:flutter_application_/features/Home/view_model/home_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
-class NewsLIstBullder extends StatelessWidget {
-  const NewsLIstBullder({
+
+class NewsListBuilder extends StatelessWidget {
+  const NewsListBuilder({
     super.key,
     required this.category,
   });
@@ -30,7 +31,7 @@ class NewsLIstBullder extends StatelessWidget {
               var newsItem = news.articles?[index];
               return InkWell(
                 onTap: () {
-                   push(context, NewsDetails(model: newsItem!));
+                  push(context, NewsDetails(model: newsItem!));
                 },
                 child: Container(
                   margin: const EdgeInsets.only(bottom: 15),
@@ -46,11 +47,8 @@ class NewsLIstBullder extends StatelessWidget {
                           width: 150,
                           fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) {
-                            return Container(
-                                color: Colors.red,
-                                width: 150,
-                                height: 100,
-                                child: const Icon(Icons.error));
+                            return const SizedBox(
+                                width: 150, child: Icon(Icons.error));
                           },
                         ),
                       ),
@@ -76,8 +74,7 @@ class NewsLIstBullder extends StatelessWidget {
                                 const Gap(7),
                                 Text(
                                   'Read',
-                                  style:
-                                      getsmallstyle(color: appcolors.whitcolor),
+                                  style: getsmallstyle(color: appcolors.whitcolor),
                                 )
                               ],
                             )

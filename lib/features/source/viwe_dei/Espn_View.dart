@@ -31,7 +31,7 @@ class Espn_View extends StatelessWidget {
           const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Gap(15),
         Expanded(
-          child: NewsLIstBullder(category: 'sport'),
+          child: NewsListBuilder(category: 'sport'),
         )
       ]),
     );

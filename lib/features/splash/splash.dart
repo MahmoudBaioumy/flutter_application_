@@ -7,22 +7,22 @@ import 'package:flutter_application_/features/Home/presentation/buttom_nav/butto
 import 'package:flutter_application_/features/upload_page/upload_view.dart';
 import 'package:gap/gap.dart';
 
-class Splash_view extends StatefulWidget {
-  const Splash_view({super.key});
+class Splash_View extends StatefulWidget {
+  const Splash_View({super.key});
 
   @override
-  State<Splash_view> createState() => _Splash_viewState();
+  State<Splash_View> createState() => _SplashViewState();
 }
 
-class _Splash_viewState extends State<Splash_view> {
+class _SplashViewState extends State<Splash_View> {
+  late bool isUpload;
   @override
   void initState() {
     super.initState();
-    late bool isUpload;
     AppLocal.getCachedData(AppLocal.ISUPLOAD_KEY).then((value) {
       isUpload = value ?? false;
     });
-    Future.delayed(const Duration(seconds: 4), () {
+    Future.delayed(const Duration(seconds: 3), () {
       pushwithReplacement(
           context, isUpload ? const bottom_nav() : const UploadView());
     });
@@ -31,24 +31,26 @@ class _Splash_viewState extends State<Splash_view> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: appcolors.Scaffoldbag,
       body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Image.asset(
-            'assets/logo.png',
-            width: 280,
-          ),
-          const Gap(5),
-          Text(
-            'Insights News',
-            style: getTitelstyle(color: appcolors.whitcolor, fontSize: 23),
-          ),
-          const Gap(5),
-          Text(
-            'Stay Informed, Anytime, Anywhere.',
-            style: getsmallstyle(color: Colors.white38),
-          )
-        ]),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/logo.png',
+              width: 300,
+            ),
+            const Gap(10),
+            Text(
+              'Insights News',
+              style: getTitelstyle(color: appcolors.whitcolor),
+            ),
+            const Gap(10),
+            Text(
+              'Stay Informed, Anytime, Anywhere.',
+              style: getsmallstyle(),
+            ),
+          ],
+        ),
       ),
     );
   }

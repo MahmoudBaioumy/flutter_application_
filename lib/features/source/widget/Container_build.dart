@@ -14,7 +14,7 @@ class containerbuild extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        push(context, const BBC_News());
+        push(context, const BBC_View());
       },
       child: Container(
         decoration: BoxDecoration(

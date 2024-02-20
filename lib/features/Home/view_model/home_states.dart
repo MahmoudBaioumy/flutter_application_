@@ -4,7 +4,7 @@ class NewsStastes {}
 
 class NewsInitState extends NewsStastes {}
 
-//get bySearch
+//NewsByCategory
 
 class NewsByCategoryLoadingState extends NewsStastes {}
 
@@ -17,7 +17,7 @@ class NewsByCategoryErrorState extends NewsStastes {
   final String error;
   NewsByCategoryErrorState({required this.error});
 }
-
+//NewsBysearch
 class NewsBySearchLoadingState extends NewsStastes {}
 
 class NewsBySearchSuccessState extends NewsStastes {
@@ -29,7 +29,7 @@ class NewsBySearchErrorState extends NewsStastes {
   final String error;
   NewsBySearchErrorState({required this.error});
 }
-
+ //getByScource
 class NewsByScourceLoadingState extends NewsStastes {}
 
 class NewsByScourceSuccessState extends NewsStastes {

@@ -48,7 +48,7 @@ class MainApp extends StatelessWidget {
                   borderSide: BorderSide.none,
                 ),
               )),
-          home: const Splash_view()),
+          home: const Splash_View()),
     );
   }
 }

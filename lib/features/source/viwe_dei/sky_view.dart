@@ -31,7 +31,7 @@ class SkyNews extends StatelessWidget {
           const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Gap(15),
         Expanded(
-          child: NewsLIstBullder(category: ''),
+          child: NewsListBuilder(category: 'Business'),
         )
       ]),
     );

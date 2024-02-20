@@ -54,24 +54,19 @@ class _Home_hederState extends State<Home_heder> {
           ],
         ),
         const Spacer(),
-        GestureDetector(
-          // onTap: () {
-          //   push(context, const profile_view());
-          // },
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              const CircleAvatar(
-                maxRadius: 28,
-              ),
-              CircleAvatar(
-                maxRadius: 25,
-                backgroundImage: path != null
-                    ? FileImage(File(path!)) as ImageProvider
-                    : const AssetImage('assets/user.png'),
-              ),
-            ],
-          ),
+        Stack(
+          alignment: Alignment.center,
+          children: [
+            const CircleAvatar(
+              maxRadius: 28,
+            ),
+            CircleAvatar(
+              maxRadius: 25,
+              backgroundImage: path != null
+                  ? FileImage(File(path!)) as ImageProvider
+                  : const AssetImage('assets/user.png'),
+            ),
+          ],
         )
       ],
     );

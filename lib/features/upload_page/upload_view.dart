@@ -7,7 +7,7 @@ import 'package:flutter_application_/core/function/routing.dart';
 import 'package:flutter_application_/core/utils/appcolors.dart';
 import 'package:flutter_application_/core/utils/text_styles.dart';
 import 'package:flutter_application_/core/widget/customBu.dart';
-import 'package:flutter_application_/features/Home/presentation/view/Home_view.dart';
+import 'package:flutter_application_/features/Home/presentation/buttom_nav/buttom_nav.dart';
 import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -33,7 +33,7 @@ class _UploadViewState extends State<UploadView> {
                   AppLocal.cacheData(AppLocal.IMAGE_KEY, path);
                   AppLocal.cacheData(AppLocal.NAME_KEY, name);
                   AppLocal.cacheData(AppLocal.ISUPLOAD_KEY, true);
-                  pushwithReplacement(context, const Homeview());
+                  pushwithReplacement(context, const bottom_nav());
                 } else if (path == null && name.isNotEmpty) {
                   showErrorDialog(context, 'Please Upload Your image');
                 } else if (path != null && name.isEmpty) {
@@ -43,10 +43,8 @@ class _UploadViewState extends State<UploadView> {
                       context, 'Please Upload Your image and Enter Your Name');
                 }
               },
-              child: Text(
-                'Done',
-                style: getTitelstyle(),
-              ))
+              child:
+                  Text('Done', style: getTitelstyle(color: appcolors.lemonada)))
         ],
       ),
       body: Center(
@@ -122,7 +120,6 @@ class _UploadViewState extends State<UploadView> {
   }
 
   uploadFromGallery() async {
-    //open Gallery and take image
     var pickedImage =
         await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedImage != null) {

@@ -31,7 +31,7 @@ class CCN_view extends StatelessWidget {
           const Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Gap(15),
         Expanded(
-          child: NewsLIstBullder(category: 'entertainment'),
+          child: NewsListBuilder(category: 'entertainment'),
         )
       ]),
     );

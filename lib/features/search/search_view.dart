@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_/core/utils/appcolors.dart';
 import 'package:flutter_application_/core/utils/text_styles.dart';
-import 'package:flutter_application_/core/widget/News_list_builder.dart';
 import 'package:flutter_application_/features/Home/view_model/home_cubit.dart';
 import 'package:flutter_application_/features/search/widget/search_list_builder.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,7 +29,7 @@ class _searchState extends State<search> {
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           TextFormField(
             onChanged: (value) {
-               context.read<NewsCubit>().getBysearch(value);
+              context.read<NewsCubit>().getBySearch(value);
             },
             style: getbodystyle(),
             decoration: const InputDecoration(
