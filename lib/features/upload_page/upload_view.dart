@@ -7,7 +7,7 @@ import 'package:flutter_application_/core/function/routing.dart';
 import 'package:flutter_application_/core/utils/appcolors.dart';
 import 'package:flutter_application_/core/utils/text_styles.dart';
 import 'package:flutter_application_/core/widget/customBu.dart';
-import 'package:flutter_application_/features/Home/Home_view.dart';
+import 'package:flutter_application_/features/Home/presentation/view/Home_view.dart';
 import 'package:gap/gap.dart';
 import 'package:image_picker/image_picker.dart';
 

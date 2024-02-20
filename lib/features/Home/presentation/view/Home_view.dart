@@ -18,6 +18,15 @@ class Homeview extends StatefulWidget {
 class _HomeviewState extends State<Homeview> {
   int pageindex = 0;
   @override
+  final List carouselimages = [
+    'assets/ccn.jpg',
+    'assets/sport.jpg',
+    'assets/weather.jpg',
+    'assets/shy.jpg',
+    'assets/shy2.jpg'
+  ];
+
+  @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 4,
@@ -32,14 +41,14 @@ class _HomeviewState extends State<Homeview> {
               ///to build the image from one temp
               ///// it's a pacName is CarouselSlider
               CarouselSlider.builder(
-                  itemCount: 5,
+                  itemCount: carouselimages.length,
                   itemBuilder: (BuildContext context, int itemIndex,
                           int pageViewIndex) =>
                       ClipRRect(
                         // this is the temp is build and the count //
                         borderRadius: BorderRadius.circular(20),
                         child: Image.asset(
-                          'assets/rodri.png',
+                          carouselimages[itemIndex],
                           height: 140,
                           width: double.infinity,
                           fit: BoxFit.cover,
@@ -108,13 +117,14 @@ class _HomeviewState extends State<Homeview> {
                   ),
                 ],
               ),
+              const Gap(10),
               const Expanded(
                   child: TabBarView(children: [
                 //to build the cliprat the titel and image the news
-                NewsLIstBullder(),
-                NewsLIstBullder(),
-                NewsLIstBullder(),
-                NewsLIstBullder(),
+                NewsLIstBullder(category: 'Science'),
+                NewsLIstBullder(category: 'Entertainment'),
+                NewsLIstBullder(category: 'Sports'),
+                NewsLIstBullder(category: 'Business'),
               ])),
             ],
           ),

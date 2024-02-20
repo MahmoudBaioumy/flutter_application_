@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_/core/utils/appcolors.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -7,10 +6,12 @@ class CustomButton extends StatelessWidget {
     this.background = const Color(0xff30312D),
     required this.text,
     required this.onPressed,
+    this.foregroundColor = Colors.white,
   });
   final String text;
   final Function() onPressed;
   final Color background;
+  final Color foregroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,7 @@ class CustomButton extends StatelessWidget {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             backgroundColor: background,
-            foregroundColor: appcolors.whitcolor),
+            foregroundColor: foregroundColor),
         onPressed: onPressed,
         child: Text(text));
   }

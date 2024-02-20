@@ -3,7 +3,7 @@ import 'package:flutter_application_/core/Network/local_storage.dart';
 import 'package:flutter_application_/core/function/routing.dart';
 import 'package:flutter_application_/core/utils/appcolors.dart';
 import 'package:flutter_application_/core/utils/text_styles.dart';
-import 'package:flutter_application_/features/buttom_nav/buttom_nav.dart';
+import 'package:flutter_application_/features/Home/presentation/buttom_nav/buttom_nav.dart';
 import 'package:flutter_application_/features/upload_page/upload_view.dart';
 import 'package:gap/gap.dart';
 

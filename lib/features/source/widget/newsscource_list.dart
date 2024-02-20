@@ -9,28 +9,28 @@ import 'package:flutter_application_/features/Home/view_model/home_states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 
-class NewsLIstBullder extends StatelessWidget {
-  const NewsLIstBullder({
+class NewsSecoursLIstBullder extends StatelessWidget {
+  const NewsSecoursLIstBullder({
     super.key,
-    required this.category,
+    required this.scource,
   });
-  final String category;
+  final String scource;
   @override
   Widget build(BuildContext context) {
-    context.read<NewsCubit>().getByCategory(category);
+    context.read<NewsCubit>().getNewsBySource(scource);
     return BlocBuilder<NewsCubit, NewsStastes>(
       builder: (context, state) {
-        if (state is NewsByCategoryErrorState) {
+        if (state is NewsByScourceErrorState) {
           return Text(state.error);
-        } else if (state is NewsByCategorySuccessState) {
-          NewsModel news = state.model;
+        } else if (state is NewsByScourceSuccessState) {
+          NewsModel scource = state.model;
           return ListView.builder(
-            itemCount: news.articles?.length,
+            itemCount: scource.articles?.length,
             itemBuilder: (context, index) {
-              var newsItem = news.articles?[index];
+              var ScouurceItem = scource.articles?[index];
               return InkWell(
                 onTap: () {
-                   push(context, NewsDetails(model: newsItem!));
+                  push(context, NewsDetails(model: ScouurceItem!));
                 },
                 child: Container(
                   margin: const EdgeInsets.only(bottom: 15),
@@ -42,7 +42,7 @@ class NewsLIstBullder extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(15),
                         child: Image.network(
-                          newsItem?.urlToImage ?? '',
+                          ScouurceItem?.urlToImage ?? '',
                           width: 150,
                           fit: BoxFit.cover,
                           errorBuilder: (context, error, stackTrace) {
@@ -60,7 +60,7 @@ class NewsLIstBullder extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              newsItem?.title ?? '',
+                              ScouurceItem?.title ?? '',
                               maxLines: 3,
                               overflow: TextOverflow.ellipsis,
                               style: getbodystyle(fontSize: 14),

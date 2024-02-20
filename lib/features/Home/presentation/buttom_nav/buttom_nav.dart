@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_/core/utils/appcolors.dart';
-import 'package:flutter_application_/features/Home/Home_view.dart';
+import 'package:flutter_application_/features/Home/presentation/view/Home_view.dart';
 import 'package:flutter_application_/features/profile/profile.dart';
 import 'package:flutter_application_/features/search/search_view.dart';
-import 'package:flutter_application_/features/source/source_view.dart';
+import 'package:flutter_application_/features/source/viwe_dei/source_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class bottom_nav extends StatefulWidget {

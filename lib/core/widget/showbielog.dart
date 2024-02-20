@@ -127,11 +127,11 @@ ShowImageDialog(context, {onTapCamera, onTapGallery}) {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color:appcolors.containerBg,
+                    color: appcolors.containerBg,
                   ),
                   child: Text(
                     'Upload from Gallary',
-                    style: TextStyle(color:appcolors.whitcolor),
+                    style: TextStyle(color: appcolors.whitcolor),
                   ),
                 ),
               ),
